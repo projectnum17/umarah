@@ -117,6 +117,36 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     };
     
+    const aboutGalleryConfig = {
+        autoplay: true,
+        spaceBetween: 32,
+        autoplayDelay: 5000,
+        slidesPerView: 1.5,
+        pagination: {
+            el: '.about--gallerytech-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.about--gallerytech .about--gallerytech--next',
+            prevEl: '.about--gallerytech .about--gallerytech--prev',
+        },
+        breakpoints: {
+            992: {
+                slidesPerView: 1.5,
+                spaceBetween: 32,
+            },
+            768: {
+                spaceBetween: 20,
+                slidesPerView: 1.5,
+            },
+    
+            320: {
+                spaceBetween: 15,
+                slidesPerView: 1,
+            },
+        },
+    };
+    
     const projectsGalleryConfig = {
         autoplay: true,
         spaceBetween: 32,
@@ -151,6 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsSlider = initSlider('.news-block', newsSliderConfig);
     
     const techGallerySlider = initSlider('.gallerytech__slider', techGalleryConfig);
+    
+    const aboutGallerySlider = initSlider(
+        '.about--gallerytech__slider',
+        aboutGalleryConfig
+    );
     
     const projectsGallerySlider = initSlider(
         '.projects__gallery',
