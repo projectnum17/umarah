@@ -60,36 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         },
     };
-    const factoriesSlider = new Swiper('.factories__gallery', {
-        centeredSlides: true,
-        loop: true,
-        speed: 500,
-        slidesPerView: 1.5,
-        spaceBetween: 40,
-        autoplay: {
-            delay: 3000,
-        },
-        pagination: {
-                    el: '.factories-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.factories .factories--next',
-                    prevEl: '.factories .factories--prev',
-                },
-        breakpoints: {
-    
-            640: {
-                slidesPerView: 2.5,
-            },
-            768: {
-                slidesPerView: 2.75,
-            },
-            1280: {
-                slidesPerView: 2.75,
-            },
-        },
-    });
     // const factoriesSliderConfig = {
     //     centeredSlides: true,
     //     autoplay: true,
@@ -116,11 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //         },
     //     },
     // };
-    // const factoriesSlider = initSlider(
-    //     '.factories__gallery',
-    //     factoriesSliderConfig
-    // );
-    
     
     const techGalleryConfig = {
         autoplay: true,
@@ -191,6 +156,46 @@ document.addEventListener('DOMContentLoaded', () => {
         '.projects__gallery',
         projectsGalleryConfig
     );
+    
+    // const factoriesSlider = initSlider(
+    //     '.factories__gallery',
+    //     factoriesSliderConfig
+    // );
+    
+    const factoriesSlider = new Swiper('.factories__gallery', {
+        centeredSlides: true,
+        loop: true,
+        speed: 2000,
+        grabCursor: true,
+        // slidesPerView: 1.5,
+        // spaceBetween: 40,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        pagination: {
+            el: '.factories-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.factories .factories--next',
+            prevEl: '.factories .factories--prev',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+            767: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2.5,
+            },
+            1280: {
+                slidesPerView: 2.5,
+            },
+        },
+    });
     const header = document.getElementById('header'),
         dropdownParent = document.querySelector('#dropdownParent'),
         dropdownItems = document.querySelector('#dropdownItems'),
