@@ -346,6 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.tech-page')) {
         const tabs = document.querySelectorAll('.tabheader__item'),
             tabsContent = document.querySelectorAll('.tabcontent'),
+            tabsBg = document.querySelectorAll('.tabcontent-bg'),
             tabsParent = document.querySelector('.tabheader__items');
     
         function hideTabContent() {
@@ -357,11 +358,18 @@ document.addEventListener('DOMContentLoaded', () => {
             tabs.forEach((el) => {
                 el.classList.remove('tabheader__item--active');
             });
+    
+            tabsBg.forEach((el) => {
+                el.classList.add('hide')
+                el.classList.remove('show', 'fade');
+            })
         }
     
         function showTabContent(i = 0) {
             tabsContent[i].classList.add('show', 'fade');
-            tabsContent[i].classList.remove('hide');
+            tabsContent[i].classList.remove('hide')
+            tabsBg[i].classList.remove('hide')
+            tabsBg[i].classList.add('show', 'fade')
             tabs[i].classList.add('tabheader__item--active');
         }
     
